@@ -3,6 +3,8 @@ import Footer from "../../home/footer/Footer";
 import "./contact.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Field, Form, Formik } from "formik";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const Contact = () => {
   const validateForm = (values) => {
@@ -25,6 +27,9 @@ const Contact = () => {
 
   return (
     <section id="contact">
+      <Link to="/">
+        <FaArrowLeft />
+      </Link>
       <div className="contact container">
         <div className="contact-info">
           <div className="contact-title">
@@ -42,6 +47,9 @@ const Contact = () => {
               message: "",
             }}
             validate={validateForm}
+            onSubmit={(values, { resetForm }) => {
+              resetForm({ values: "" });
+            }}
           >
             {(formik) => (
               <Form>
