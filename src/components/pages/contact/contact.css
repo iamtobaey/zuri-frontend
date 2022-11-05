@@ -79,6 +79,12 @@ textarea::placeholder {
   font-size: 1rem;
 }
 
+input:focus,
+textarea:focus {
+  box-shadow: 0px 1px 2px #118cff;
+  border-color: #118cff;
+}
+
 input[type="checkbox"] {
   width: auto;
   border: 1px solid #d0d5dd;
@@ -114,6 +120,11 @@ input[type="checkbox"] {
 
 .error-pane {
   border-color: red;
+}
+
+.error-pane:focus {
+  border-color: red;
+  box-shadow: 2px 1px 4px #c00000ce;
 }
 
 .back {

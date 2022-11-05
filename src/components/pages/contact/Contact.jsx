@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import validator from "validator";
 
 const Contact = () => {
-  
   const validateForm = (values) => {
     const errors = {};
 
@@ -18,8 +18,11 @@ const Contact = () => {
     if (!values.last_name) {
       errors.last_name = "Last name is required";
     }
+
     if (!values.email) {
       errors.email = "Email is required";
+    } else if (!validator.isEmail(values.email)) {
+      errors.email = "Invalid email address";
     }
     if (!values.message) {
       errors.message = "Message is required";
@@ -127,7 +130,7 @@ const Contact = () => {
                         ? "message error-pane"
                         : "message"
                     }
-                    placeholder="Send me a and I will reply you as soon as possible"
+                    placeholder="Send me a message and I will reply you as soon as possible....."
                   />
                   {formik.touched.message && formik.errors.message ? (
                     <div className="error-text">{formik.errors.message}</div>
