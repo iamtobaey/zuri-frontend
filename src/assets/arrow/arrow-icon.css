@@ -1,0 +1,44 @@
+.arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 208px;
+  top: -20px;
+  background: #ffffff;
+  /* border: 1px dashed #d0d5dd; */
+  border-radius: 20px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.arrow img:nth-child(2){
+  visibility: hidden;
+}
+
+/* ============= MEDIA QUERIES (SMALL DEVICES) ================= */
+@media screen and (max-width: 600px) {
+  .arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 30px;
+    top: -20px;
+    background: #ffffff;
+    /* border: 1px dashed #d0d5dd; */
+    border-radius: 20px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .arrow img:nth-child(1){
+    display: none;
+  }
+  .arrow img:nth-child(2){
+    visibility: visible;
+  }
+}

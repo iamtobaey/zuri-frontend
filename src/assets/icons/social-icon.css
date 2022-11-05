@@ -1,0 +1,16 @@
+#social-icon{
+    margin-bottom:4rem ;
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    gap: 2rem;
+}
+
+.social-icon a img{
+    width: 24px;    
+}
+

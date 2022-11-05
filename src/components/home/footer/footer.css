@@ -1,0 +1,37 @@
+#footer {
+  padding: 2rem 0;
+}
+
+#footer .footer {
+  border-top: 1px solid var(--color-btn);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 2rem 0 0 ; */
+}
+
+.footer img {
+  width: 187px;
+}
+
+.footer .ifg {
+  width: 140px;
+}
+
+.footer span {
+  color: var(--color-light);
+}
+
+/* ============= MEDIA QUERIES (SMALL DEVICES) ================= */
+@media screen and (max-width: 600px) {
+  #footer {
+    padding: 0 1rem;
+  }
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer img {
+    margin: 2rem 0;
+  }
+}
