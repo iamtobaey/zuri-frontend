@@ -1,12 +1,14 @@
 import React from "react";
 import Footer from "../../home/footer/Footer";
 import "./contact.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+  const notify = () => toast("Successful");
   const validateForm = (values) => {
     const errors = {};
 
@@ -30,6 +32,7 @@ const Contact = () => {
       <Link to="/">
         <FaArrowLeft />
       </Link>
+      <ToastContainer />
       <div className="contact container">
         <div className="contact-info">
           <div className="contact-title">
@@ -137,7 +140,12 @@ const Contact = () => {
                     contact you.
                   </span>
                 </div>
-                <button type="submit" id="btn_submit" className="btn_submit">
+                <button
+                  type="submit"
+                  onClick={notify}
+                  id="btn_submit"
+                  className="btn_submit"
+                >
                   Send Message
                 </button>
               </Form>
