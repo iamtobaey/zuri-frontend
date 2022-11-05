@@ -1,11 +1,9 @@
 .buttons {
   display: grid;
-  place-items: center;
+
   text-align: center;
 }
-.buttons .button{
-  width: 1152px;
-}
+
 .buttons .button .button-btn {
   padding: 24px 32px;
   transition: var(--transition);
@@ -27,16 +25,11 @@
   background: var(--color-btn-variant);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-/* ============= MEDIA QUERIES (MEDIUM DEVICES) ================= */
-@media screen and (max-width: 1024px) {
-  .buttons .button  {
-    width: 643px;
-  }
-}
+
 
 /* ============= MEDIA QUERIES (SMALL DEVICES) ================= */
 @media screen and (max-width: 600px) {
-  .buttons .button {
-    width: 343px;
+  .buttons .button .button-btn {
+    font-size: 1rem;
   }
 }

@@ -4,11 +4,11 @@ import "./contact.css";
 import { Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-  const notify = () => toast("Successful");
+  
   const validateForm = (values) => {
     const errors = {};
 
@@ -24,16 +24,17 @@ const Contact = () => {
     if (!values.message) {
       errors.message = "Message is required";
     }
+
     return errors;
   };
 
   return (
     <section id="contact">
-      <Link to="/">
-        <FaArrowLeft />
-      </Link>
       <ToastContainer />
       <div className="contact container">
+        <Link to="/" className="back">
+          <FaArrowLeft />
+        </Link>
         <div className="contact-info">
           <div className="contact-title">
             <h2>Contact Me</h2>
@@ -42,7 +43,6 @@ const Contact = () => {
             </span>
           </div>
           <Formik
-            className="shadow-lg"
             initialValues={{
               first_name: "",
               last_name: "",
@@ -133,19 +133,28 @@ const Contact = () => {
                     <div className="error-text">{formik.errors.message}</div>
                   ) : null}
                 </div>
-                <div className="check">
-                  <input type="checkbox" />
-                  <span>
-                    You agree to providing your data to Oluwatobiloba who may
-                    contact you.
-                  </span>
+                <div>
+                  <div className="check">
+                    <Field
+                      type="checkbox"
+                      name="checkbox"
+                      className={
+                        formik.touched.check && formik.errors.check
+                          ? "checkbox error-pane"
+                          : "checkbox"
+                      }
+                    />
+                    <span>
+                      You agree to providing your data to Oluwatobiloba who may
+                      contact you.
+                    </span>
+                  </div>
+
+                  {formik.errors.checkbox ? (
+                    <div className="error-text">{formik.errors.checkbox}</div>
+                  ) : null}
                 </div>
-                <button
-                  type="submit"
-                  onClick={notify}
-                  id="btn_submit"
-                  className="btn_submit"
-                >
+                <button type="submit" id="btn_submit" className="btn_submit">
                   Send Message
                 </button>
               </Form>
