@@ -58,10 +58,8 @@ const Button = () => {
               </a>
             );
           })}
-          <Link to="/contact">
-            <span className="button-btn" id="contact">
-              Contact Me
-            </span>
+          <Link to="/contact" className="button-btn" id="contact">
+            Contact Me
           </Link>
         </div>
       </div>

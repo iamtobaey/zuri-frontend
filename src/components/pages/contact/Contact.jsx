@@ -25,7 +25,7 @@ const Contact = () => {
       errors.email = "Invalid email address";
     }
     if (!values.message) {
-      errors.message = "Message is required";
+      errors.message = "Enter a message";
     }
 
     return errors;
