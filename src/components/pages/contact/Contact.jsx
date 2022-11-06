@@ -157,7 +157,7 @@ const Contact = () => {
                     <div className="error-text">{formik.errors.checkbox}</div>
                   ) : null}
                 </div>
-                <button type="submit" id="btn_submit" className="btn_submit">
+                <button type="submit" id="btn__submit" className="btn_submit">
                   Send Message
                 </button>
               </Form>
